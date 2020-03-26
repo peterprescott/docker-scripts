@@ -39,11 +39,11 @@ Build it:
 
 Then run it:
 
-`docker run -p 80:80 jake-example`
+`docker container run -p 80:80 jake-example`
 
 Now run it with your `src` folder mounted as a volume:
 
-`docker run -p 80:80 -v ~/docker/src:/var/www/html/ jake-example`
+`docker container run -p 80:80 -v ~/docker/src:/var/www/html/ jake-example`
 
 and you can edit the php folder and see the changes live.
 
