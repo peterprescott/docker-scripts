@@ -19,14 +19,14 @@ He covers:
 8. [Mounting volumes](https://docs.docker.com/storage/volumes/)
 9. One process per container
 
-In a new folder (`docker`), create a subfolder (`src`) and inside that a file `index.php`:
+In a new folder (`example`), create a subfolder (`src`) and inside that a file `index.php`:
 ```
 <?php
 
 echo "hello world";
 ```
 
-Then in the `docker` folder create your Dockerfile:
+Then in the `example` folder create your Dockerfile:
 ```
 # Dockerfile
 FROM php:7.0-apache
@@ -35,15 +35,15 @@ EXPOSE 80
 ```
 Build it: 
 
-`docker build -t hello-world .`
+`docker build -t jake-example .`
 
 Then run it:
 
-`docker run -p 80:80 hello-world`
+`docker run -p 80:80 jake-example`
 
 Now run it with your `src` folder mounted as a volume:
 
-`docker run -p 80:80 -v ~/docker/src:/var/www/html/ hello-world`
+`docker run -p 80:80 -v ~/docker/src:/var/www/html/ jake-example`
 
 and you can edit the php folder and see the changes live.
 
